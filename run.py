@@ -6,7 +6,6 @@ from flask import abort, redirect, url_for, make_response
 app = Flask(__name__)
 
 
-
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -27,20 +26,6 @@ def gallery():
     return render_template('gallery.html')
 
 
-# @app.route('/login', methods=['GET', 'POST'])
-# def login():
-#     if request.method == "POST":
-#         return request.form["username"]+"+"+request.form["password"]
-#     else:
-#         return render_template('login.html')
-#
-# @app.route('/user/<username>', methods=['GET','POST'])
-# def show_user_profile(username):
-#     if request.method == 'POST':
-#         return 'HTTP POST for user %s with password %s' % (username, request.form['password'])
-#     else:
-#         return 'HTTP GET for user %s' % username
-#
 @app.route('/error_denied')
 def error_denied():
     abort(401)
