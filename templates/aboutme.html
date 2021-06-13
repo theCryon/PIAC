@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='mountain.ico') }}">
-    <title>About me</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}About Me{% endblock %}
+{% set active_page = "aboutme" -%}
+{% block body %}
+
     <h1>About me</h1>
-    <p><a href="{{url_for('home')}}">Back to Home</a></p>
-        <p>Cześć jestem studentem Informatyki na WSB i szukam pracy jako Java/Backend developer :)</p>
-</body>
-</html>
+    <p>Cześć jestem studentem Informatyki na WSB i szukam pracy jako Java/Backend developer :)</p>
+
+{% endblock %}

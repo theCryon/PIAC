@@ -1,15 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+{% block title %}Gallery{% endblock %}
+{% set active_page = "gallery" -%}
+{% block body %}
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="{{ url_for('static', filename='mountain.ico') }}">
-    <title>Gallery</title>
+    <link rel="stylesheet" href="static/gallery.css">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
 </head>
-<body>
-    <h2>Here are some cat pictures:</h2>
-    <img src="{{ url_for('static', filename='maskedcat.jpg') }}" alt="Masked Cat" width="600" height="400">
-    <img src="{{ url_for('static', filename='normalcat.jpg') }}" alt="Normal Cat" width="600" height="400">
-    <p><a href="{{url_for('home')}}">Back to Home</a></p>
-</body>
-</html>
+<div class="container gallery-container">
+    <h1>Cat pics!</h1>
+    <p class="page-description text-center">With zoom and lighthouse effects!</p>
+    <div class="tz-gallery">
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="static/gallery_pics/maskedcat.jpg">
+                    <img src="static/gallery_pics/maskedcat.jpg" alt="Masked Cat">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="static/gallery_pics/normalcat.jpg">
+                    <img src="static/gallery_pics/normalcat.jpg" alt="Two colour eyes">
+                </a>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <a class="lightbox" href="static/gallery_pics/ginger.png">
+                    <img src="static/gallery_pics/ginger.png" alt="Ginger">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="static/gallery_pics/high5.jpg">
+                    <img src="static/gallery_pics/high5.jpg" alt="5!">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="static/gallery_pics/surprised.jpg">
+                    <img src="static/gallery_pics/surprised.jpg" alt="Surprised?">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="static/gallery_pics/3colors.jpg">
+                    <img src="static/gallery_pics/3colors.jpg" alt="Three colored fur <3">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="static/gallery_pics/meow.jpg">
+                    <img src="static/gallery_pics/meow.jpg" alt="Meow!">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="static/gallery_pics/poser.jpg">
+                    <img src="static/gallery_pics/poser.jpg" alt="Poser">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="static/gallery_pics/hug.jpg">
+                    <img src="static/gallery_pics/hug.jpg" alt="Hug">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+<script>baguetteBox.run('.tz-gallery');</script>
+
+{% endblock %}

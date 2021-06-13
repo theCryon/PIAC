@@ -1,15 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='mountain.ico') }}">
-    <title>Contact</title>
-</head>
-<body>
-    <h1>Contact me</h1>
-    <a href="mailto: mkrajnik225@gmail.com">EMAIL</a>
-    <br>
-    <p><a href="{{url_for('home')}}">Back to Home</a></p>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Contact{% endblock %}
+{% set active_page = "contact" -%}
+{% block body %}
+
+<h3>Contact me :)</h3>
+<form action="{{url_for('send_message')}}" method="POST">
+    <Label>Name: </Label><input type="text" name="name"/><br>
+    <label>E-mail: </label><input type="email" name="email"/><br>
+    <label>Message: </label><input type="text" name="message"/><br>
+    <input type="submit" value="Send Message"/>
+</form>
+
+{{success}}
+
+{% endblock %}
